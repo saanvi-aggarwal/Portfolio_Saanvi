@@ -260,7 +260,7 @@ export function Achievements() {
                 role="button"
                 onClick={() => scrollToIndex(index)}
                 aria-label={item.metric ? `${item.label} (${item.metric}${item.suffix || ''})` : item.label}
-                className={`snap-center shrink-0 w-[clamp(290px,28vw,350px)] min-h-[440px] sm:min-h-[460px] h-[460px] rounded-[24px] bg-white p-5 sm:p-6 flex flex-col justify-between border transition-all duration-500 ease-out select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0d0d0d] ${
+                className={`snap-center shrink-0 w-[clamp(320px,32vw,395px)] min-h-[515px] sm:min-h-[535px] h-[535px] rounded-[24px] bg-white p-6 flex flex-col justify-between border transition-all duration-500 ease-out select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0d0d0d] ${
                   isActive
                     ? 'opacity-100 scale-100 border-[#0d0d0d]/30 shadow-[0_20px_48px_-10px_rgba(13,13,13,0.14)] -translate-y-1'
                     : 'opacity-60 scale-[0.95] border-[rgba(13,13,13,0.1)] shadow-xs hover:opacity-85 hover:border-[rgba(13,13,13,0.2)]'
@@ -291,7 +291,7 @@ export function Achievements() {
                     <span className="font-mono text-[10px] uppercase tracking-wider text-[#77756f] block">
                       {item.platform}
                     </span>
-                    <h3 className="font-sans font-bold text-base sm:text-lg text-[#0d0d0d] tracking-tight leading-snug truncate">
+                    <h3 className="font-sans font-bold text-base sm:text-lg text-[#0d0d0d] tracking-tight leading-snug line-clamp-2 min-h-[2.5rem] flex items-center">
                       {item.label}
                     </h3>
                     <p className="text-xs text-[#55534e] leading-relaxed line-clamp-2">
@@ -301,7 +301,7 @@ export function Achievements() {
                 </div>
 
                 {/* 2. Media Slot: Interactive Gallery OR Designed MetricPlaceholder */}
-                <div className="my-3 w-full">
+                <div className="my-3 w-full flex-1 flex flex-col justify-center">
                   {hasImages ? (
                     <AchievementGallery
                       images={item.images}
@@ -337,34 +337,47 @@ export function Achievements() {
                   )}
                 </div>
 
-                {/* 3. Bottom Footer: Verified Metric (pinned at bottom, shown only once) */}
-                <div className="pt-3 border-t border-[rgba(13,13,13,0.08)] mt-auto">
+                {/* 3. Bottom Footer: Verified Metric (pinned cleanly at bottom) */}
+                <div className="pt-3.5 border-t border-[rgba(13,13,13,0.08)] mt-auto">
                   {hasImages && index < 3 && item.numericTarget !== undefined ? (
                     /* Image cards show animated count-up in the footer */
-                    <div className="flex items-baseline justify-between">
-                      <span className="text-[10px] font-mono uppercase tracking-wider text-[#a9a6a0]">
-                        Verified Metric
-                      </span>
-                      <AnimatedMetric
-                        target={item.numericTarget}
-                        suffix={item.suffix}
-                        start={isSectionInView || prefersReduced}
-                      />
+                    <div className="flex items-end justify-between gap-3">
+                      <div>
+                        <span className="text-[10px] font-mono uppercase tracking-wider text-[#77756f] block font-medium">
+                          Verified Metric
+                        </span>
+                        <span className="text-[11px] font-mono text-[#a9a6a0]">
+                          Official Result
+                        </span>
+                      </div>
+                      <div className="text-right">
+                        <AnimatedMetric
+                          target={item.numericTarget}
+                          suffix={item.suffix}
+                          start={isSectionInView || prefersReduced}
+                        />
+                      </div>
                     </div>
                   ) : (
-                    /* Cards without images already display the metric prominently in the placeholder,
-                       so footer displays an elegant secondary status line without duplicating full-size */
+                    /* Cards without images show clean verified standing line */
                     <div className="flex items-center justify-between">
-                      <span className="text-[10px] font-mono uppercase tracking-wider text-[#a9a6a0]">
-                        Track &amp; Standing
-                      </span>
-                      <span className="font-mono text-xs font-semibold text-[#0d0d0d] flex items-center gap-1.5">
+                      <div>
+                        <span className="text-[10px] font-mono uppercase tracking-wider text-[#77756f] block font-medium">
+                          Verified Standing
+                        </span>
+                        <span className="text-[11px] font-mono text-[#a9a6a0]">
+                          Official Qualifier
+                        </span>
+                      </div>
+                      <div className="text-right flex items-center gap-2 font-mono text-xs sm:text-sm font-semibold text-[#0d0d0d]">
                         <span
-                          className="w-1.5 h-1.5 rounded-full"
+                          className="w-2 h-2 rounded-full shrink-0"
                           style={{ backgroundColor: item.brandColor }}
                         />
-                        <span>Official Entry</span>
-                      </span>
+                        <span>
+                          {item.metric || (index === 3 ? 'PPT Stage' : index === 4 ? 'IDEA 2.0' : 'Finalist')}
+                        </span>
+                      </div>
                     </div>
                   )}
                 </div>
@@ -373,7 +386,7 @@ export function Achievements() {
           })}
 
           {/* End Card: "and counting →" */}
-          <div className="snap-center shrink-0 w-56 min-h-[440px] sm:min-h-[460px] h-[460px] rounded-[24px] border-2 border-dashed border-[rgba(13,13,13,0.18)] bg-white/40 flex flex-col items-center justify-center p-5 text-center text-[#77756f] select-none transition-all duration-500 opacity-60 hover:opacity-100">
+          <div className="snap-center shrink-0 w-60 min-h-[515px] sm:min-h-[535px] h-[535px] rounded-[24px] border-2 border-dashed border-[rgba(13,13,13,0.18)] bg-white/40 flex flex-col items-center justify-center p-6 text-center text-[#77756f] select-none transition-all duration-500 opacity-60 hover:opacity-100">
             <span className="font-mono text-[10px] uppercase tracking-widest block mb-2 text-[#a9a6a0]">
               Milestones
             </span>
@@ -458,9 +471,15 @@ function AnimatedMetric({
   }, [target, start]);
 
   return (
-    <span className="font-mono text-3xl sm:text-4xl font-bold text-[#0d0d0d] tracking-tight block">
-      {val}
-      {suffix}
-    </span>
+    <div className="flex items-baseline justify-end gap-1.5 font-mono">
+      <span className="text-2xl sm:text-3xl font-extrabold text-[#0d0d0d] tracking-tight">
+        {val}
+      </span>
+      {suffix && (
+        <span className="text-xs sm:text-sm font-semibold text-[#55534e]">
+          {suffix}
+        </span>
+      )}
+    </div>
   );
 }

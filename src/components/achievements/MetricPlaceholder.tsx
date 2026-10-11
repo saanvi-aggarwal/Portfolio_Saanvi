@@ -117,6 +117,16 @@ export function MetricPlaceholder({
           {platform}
         </div>
       </div>
+
+      {/* Structural milestone badges row mirroring the gallery thumbnail strip */}
+      <div className="flex items-center gap-2 mt-2.5 font-mono text-[10px] text-[#77756f]">
+        <span className="px-2.5 py-1 rounded-md bg-[#eae8e3]/70 border border-[rgba(13,13,13,0.08)]">
+          Official Track
+        </span>
+        <span className="px-2.5 py-1 rounded-md bg-[#eae8e3]/70 border border-[rgba(13,13,13,0.08)]">
+          National Level
+        </span>
+      </div>
     </div>
   );
 }
