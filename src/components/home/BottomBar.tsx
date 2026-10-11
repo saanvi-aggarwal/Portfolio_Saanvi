@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import Link from 'next/link';
 import { PROFILE } from '@/lib/data';
 import { usePrefersReducedMotion } from '@/lib/hooks';
 
@@ -24,17 +23,7 @@ export function BottomBar() {
         transitionDelay: prefersReduced ? '0ms' : '650ms',
       }}
     >
-      <div className="site-container flex items-center justify-between py-2">
-        {/* Subtle Secondary Link to COA Lab */}
-        <Link
-          href="/coa"
-          className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono text-[#77756f] hover:text-[#0d0d0d] bg-white/70 hover:bg-white border border-[rgba(13,13,13,0.1)] transition-colors shadow-2xs"
-        >
-          <span className="w-1.5 h-1.5 rounded-full bg-[#0d0d0d]" />
-          <span>COA Lab</span>
-          <span className="text-[10px]">↗</span>
-        </Link>
-
+      <div className="site-container flex items-center justify-end py-2">
         {/* Social Hairline Buttons (Fill Ink on Hover) */}
         <div className="flex items-center gap-2.5">
           {PROFILE.github && (

@@ -111,11 +111,11 @@ export function HomeCTA() {
   return (
     <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 w-full max-w-[560px] mx-auto mt-7 sm:mt-9 z-20 select-none">
       {/* =================================================================== */}
-      {/* 1. PRIMARY BUTTON: "View my work →"                                 */}
+      {/* 1. PRIMARY BUTTON: "COA Lab →"                                      */}
       {/* =================================================================== */}
       <Link
         ref={primaryRef}
-        href="/work"
+        href="/coa"
         className="group relative inline-flex items-center justify-center h-[48px] px-6 sm:px-7 rounded-full bg-[#0d0d0d] text-white font-sans font-medium text-[15px] tracking-[-0.01em] shadow-[0_4px_16px_rgba(13,13,13,0.12)] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-[2px] hover:bg-[#222222] hover:shadow-[0_8px_24px_rgba(13,13,13,0.22)] focus-visible:outline-2 focus-visible:outline-[#0d0d0d] focus-visible:outline-offset-3 focus-visible:outline-solid cursor-pointer"
         style={{
           opacity: mountedPrimary || prefersReduced ? 1 : 0,
@@ -128,7 +128,7 @@ export function HomeCTA() {
           willChange: 'transform, opacity',
         }}
       >
-        <span>View my work</span>
+        <span>COA Lab</span>
         <span
           className="inline-block ml-1.5 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1"
           aria-hidden="true"
