@@ -183,6 +183,7 @@ export function About() {
             {/* Interactive Swing & Flip ID Card Container */}
             <div
               ref={cardContainerRef}
+              data-cursor="flip"
               tabIndex={0}
               role="button"
               aria-label="Student ID card. Press Enter or Space to flip."

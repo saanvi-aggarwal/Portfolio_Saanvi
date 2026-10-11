@@ -256,6 +256,7 @@ export function Achievements() {
               <div
                 key={item.id}
                 data-achievement-card
+                data-cursor="view"
                 tabIndex={0}
                 role="button"
                 onClick={() => scrollToIndex(index)}

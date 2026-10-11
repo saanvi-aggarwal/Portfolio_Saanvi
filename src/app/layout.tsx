@@ -4,7 +4,7 @@ import './globals.css';
 import { SmoothScrollProvider } from '@/lib/scroll';
 import { Navigation } from '@/components/Navigation';
 import { PageTransition } from '@/components/PageTransition';
-import { Cursor } from '@/components/ui/Cursor';
+import { CustomCursor } from '@/components/ui/CustomCursor';
 import { PROFILE } from '@/lib/data';
 
 const interTight = localFont({
@@ -128,7 +128,7 @@ export default function RootLayout({
           Skip to main content
         </a>
 
-        <Cursor />
+        <CustomCursor />
 
         <SmoothScrollProvider>
           <Navigation />

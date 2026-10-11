@@ -296,19 +296,12 @@ html.lenis body {
   color: #ffffff;
 }
 
-/* Hide native cursor ONLY on qualified devices, preserving text inputs and textareas */
-@media (hover: hover) and (pointer: fine) {
+/* Hide default cursor only on devices with a fine pointer */
+@media (pointer: fine) {
   html.has-custom-cursor,
   html.has-custom-cursor body,
-  html.has-custom-cursor *:not(input):not(textarea):not([contenteditable="true"]):not([contenteditable=""]) {
+  html.has-custom-cursor * {
     cursor: none !important;
-  }
-
-  html.has-custom-cursor input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]),
-  html.has-custom-cursor textarea,
-  html.has-custom-cursor [contenteditable="true"],
-  html.has-custom-cursor [contenteditable=""] {
-    cursor: text !important;
   }
 }
 

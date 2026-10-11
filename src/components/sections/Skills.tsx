@@ -70,6 +70,8 @@ export function Skills() {
               return (
                 <div
                   key={skill.atomicNumber}
+                  data-cursor="view"
+                  data-skill-tile="true"
                   tabIndex={0}
                   role="button"
                   aria-label={`${skill.name} (${skill.symbol}) - ${skill.family}`}
