@@ -366,7 +366,7 @@ export function Achievements() {
                           Verified Standing
                         </span>
                         <span className="text-[11px] font-mono text-[#a9a6a0]">
-                          Official Qualifier
+                          Official Entry
                         </span>
                       </div>
                       <div className="text-right flex items-center gap-2 font-mono text-xs sm:text-sm font-semibold text-[#0d0d0d]">

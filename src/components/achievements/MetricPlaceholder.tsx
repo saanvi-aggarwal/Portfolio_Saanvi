@@ -40,7 +40,7 @@ export function MetricPlaceholder({
     // Elegant milestone typography for competitive rounds without raw numeric scores
     if (label.includes('Tekathon') || label.includes('SIH')) {
       primaryValue = 'PPT Round';
-      subLabel = 'SIH Internal Qualifier';
+      subLabel = '';
     } else if (label.includes('PSB') || label.includes('IDEA')) {
       primaryValue = 'IDEA 2.0';
       subLabel = 'AI-CSPARC Innovation';
@@ -101,15 +101,17 @@ export function MetricPlaceholder({
             {primaryValue}
           </div>
 
-          <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/80 border border-[rgba(13,13,13,0.08)] shadow-2xs backdrop-blur-xs">
-            <span
-              className="w-1.5 h-1.5 rounded-full animate-pulse"
-              style={{ backgroundColor: brandColor }}
-            />
-            <span className="font-mono text-[10px] sm:text-[11px] font-semibold text-[#55534e] uppercase tracking-wider">
-              {subLabel}
-            </span>
-          </div>
+          {subLabel ? (
+            <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/80 border border-[rgba(13,13,13,0.08)] shadow-2xs backdrop-blur-xs">
+              <span
+                className="w-1.5 h-1.5 rounded-full animate-pulse"
+                style={{ backgroundColor: brandColor }}
+              />
+              <span className="font-mono text-[10px] sm:text-[11px] font-semibold text-[#55534e] uppercase tracking-wider">
+                {subLabel}
+              </span>
+            </div>
+          ) : null}
         </div>
 
         {/* Decorative corner tag matching card branding */}
