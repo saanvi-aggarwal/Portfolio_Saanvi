@@ -61,7 +61,7 @@ export function Certifications() {
           </div>
 
           {/* Right: Rich Certificate Showcase Cards */}
-          <div className="space-y-6 rv stagger-1">
+          <div className="flex flex-col gap-10 sm:gap-14 rv stagger-1">
             {CERTIFICATIONS.map((cert) => (
               <div
                 key={cert.id}

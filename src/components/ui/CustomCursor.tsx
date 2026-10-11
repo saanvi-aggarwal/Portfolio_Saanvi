@@ -60,12 +60,12 @@ export function CustomCursor() {
 
     // 2. Interactive elements (Links, buttons, nav items, tabs)
     const interactiveEl = target.closest<HTMLElement>(
-      'a, button, [role="button"], [role="tab"], input[type="submit"], input[type="button"], [data-cursor="link"], nav a, nav button'
+      'a, button, [role="tab"], input[type="submit"], input[type="button"], [data-cursor="link"], nav a, nav button, [role="button"]:not([data-achievement-card])'
     );
 
-    // 3. Project cards, achievement cards, skill periodic-table tiles
+    // 3. Project cards, specific pill triggers (excluding achievement cards)
     const cardEl = target.closest<HTMLElement>(
-      '[data-cursor="view"], [data-cursor="open"], [data-achievement-card], [data-skill-tile], [aria-label*="Project:"], [aria-label*=" - Languages"], [aria-label*=" - Core"], [aria-label*=" - Tools"], [aria-label*=" - Interpersonal"]'
+      '[data-cursor="pill"], [data-cursor-label]'
     );
 
     if (cardEl) {

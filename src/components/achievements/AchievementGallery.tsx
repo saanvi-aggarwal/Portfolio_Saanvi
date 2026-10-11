@@ -68,7 +68,7 @@ export function AchievementGallery({
           }
         }}
         aria-label={`View enlarged photo: ${imageCaptions?.[safeIndex] || title}`}
-        className="group/hero relative aspect-[4/3] w-full rounded-2xl overflow-hidden border border-[rgba(13,13,13,0.12)] bg-[#f5f3ef] shadow-2xs hover:shadow-md cursor-pointer transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0d0d0d]"
+        className="group/hero relative aspect-[16/10] w-full rounded-xl overflow-hidden border border-[rgba(13,13,13,0.12)] bg-[#f5f3ef] shadow-2xs hover:shadow-md cursor-pointer transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0d0d0d]"
       >
         {/* Render stacked images for smooth crossfade transition */}
         {images.map((src, idx) => {
@@ -136,7 +136,7 @@ export function AchievementGallery({
         <div
           role="tablist"
           aria-label={`Thumbnail options for ${title}`}
-          className="flex items-center gap-2.5 mt-2.5 pt-0.5"
+          className="flex items-center gap-2 mt-2"
         >
           {images.map((thumbSrc, thumbIdx) => {
             const isSelected = thumbIdx === safeIndex;
@@ -156,7 +156,7 @@ export function AchievementGallery({
                   setSelectedIndex(thumbIdx);
                 }}
                 onMouseEnter={() => setSelectedIndex(thumbIdx)}
-                className={`relative aspect-[4/3] w-14 sm:w-16 rounded-xl overflow-hidden border cursor-pointer transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0d0d0d] ${
+                className={`relative aspect-[16/10] w-11 sm:w-12 rounded-lg overflow-hidden border cursor-pointer transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0d0d0d] ${
                   isSelected
                     ? 'border-[#0d0d0d] ring-2 ring-[#0d0d0d]/30 scale-102 shadow-xs'
                     : 'border-[rgba(13,13,13,0.14)] opacity-60 hover:opacity-100 hover:border-[#0d0d0d]/60'

@@ -62,7 +62,7 @@ export function MetricPlaceholder({
       }`}
     >
       <div
-        className="group/placeholder relative aspect-[4/3] w-full rounded-2xl overflow-hidden border p-6 flex flex-col items-center justify-center text-center shadow-2xs hover:shadow-md transition-all duration-500 ease-out select-none"
+        className="group/placeholder relative aspect-[16/10] w-full rounded-xl overflow-hidden border p-4 flex flex-col items-center justify-center text-center shadow-2xs hover:shadow-md transition-all duration-500 ease-out select-none"
         style={{
           background: `radial-gradient(circle at 50% 30%, ${brandColor}18 0%, ${brandColor}06 60%, rgba(255,255,255,0.7) 100%)`,
           borderColor: `${brandColor}24`,
@@ -77,8 +77,8 @@ export function MetricPlaceholder({
               : 'opacity-10 group-hover/placeholder:scale-120 duration-700'
           }`}
         >
-          <div className="w-36 h-36 flex items-center justify-center filter grayscale contrast-125">
-            <TechLogo name={platform} logoKey={logoKey} size={130} />
+          <div className="w-24 h-24 flex items-center justify-center filter grayscale contrast-125">
+            <TechLogo name={platform} logoKey={logoKey} size={85} />
           </div>
         </div>
 
@@ -92,13 +92,11 @@ export function MetricPlaceholder({
         />
 
         {/* Center: Big Metric Value + Sub-label */}
-        <div className="relative z-10 flex flex-col items-center justify-center px-4 max-w-full">
+        <div className="relative z-10 flex flex-col items-center justify-center px-3 max-w-full">
           <div
-            className={`font-sans font-black tracking-tight text-[#0d0d0d] leading-none mb-2.5 transition-transform duration-300 ${
-              primaryValue.length > 9
-                ? 'text-2xl sm:text-3xl'
-                : 'text-3xl sm:text-4xl lg:text-5xl'
-            } ${prefersReduced ? '' : 'group-hover/placeholder:-translate-y-0.5'}`}
+            className={`font-sans font-black tracking-tight text-[#0d0d0d] leading-none mb-1.5 transition-transform duration-300 text-xl sm:text-2xl ${
+              prefersReduced ? '' : 'group-hover/placeholder:-translate-y-0.5'
+            }`}
           >
             {primaryValue}
           </div>

@@ -256,27 +256,26 @@ export function Achievements() {
               <div
                 key={item.id}
                 data-achievement-card
-                data-cursor="view"
                 tabIndex={0}
                 role="button"
                 onClick={() => scrollToIndex(index)}
                 aria-label={item.metric ? `${item.label} (${item.metric}${item.suffix || ''})` : item.label}
-                className={`snap-center shrink-0 w-[clamp(320px,42vw,490px)] min-h-[580px] sm:min-h-[610px] rounded-[28px] bg-white p-6 sm:p-7 flex flex-col justify-between border transition-all duration-500 ease-out select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0d0d0d] ${
+                className={`snap-center shrink-0 w-[clamp(290px,28vw,350px)] min-h-[440px] sm:min-h-[460px] h-[460px] rounded-[24px] bg-white p-5 sm:p-6 flex flex-col justify-between border transition-all duration-500 ease-out select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0d0d0d] ${
                   isActive
                     ? 'opacity-100 scale-100 border-[#0d0d0d]/30 shadow-[0_20px_48px_-10px_rgba(13,13,13,0.14)] -translate-y-1'
                     : 'opacity-60 scale-[0.95] border-[rgba(13,13,13,0.1)] shadow-xs hover:opacity-85 hover:border-[rgba(13,13,13,0.2)]'
                 } ${prefersReduced ? '!scale-100 !transform-none' : ''}`}
               >
                 {/* 1. Header: Platform Logo Tile + Index + Title + Detail */}
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-2.5">
                   <div className="flex items-center justify-between">
                     <div
-                      className="w-13 h-13 rounded-2xl flex items-center justify-center p-2.5 relative overflow-hidden"
+                      className="w-11 h-11 rounded-xl flex items-center justify-center p-2 relative overflow-hidden"
                       style={{
                         backgroundColor: `${item.brandColor}12`,
                       }}
                     >
-                      <TechLogo name={item.platform} logoKey={item.logoKey} size={30} />
+                      <TechLogo name={item.platform} logoKey={item.logoKey} size={26} />
                       <div
                         className="absolute inset-0 opacity-20 filter blur-md rounded-full pointer-events-none"
                         style={{ backgroundColor: item.brandColor }}
@@ -292,10 +291,10 @@ export function Achievements() {
                     <span className="font-mono text-[10px] uppercase tracking-wider text-[#77756f] block">
                       {item.platform}
                     </span>
-                    <h3 className="font-sans font-bold text-lg sm:text-xl text-[#0d0d0d] tracking-tight leading-snug">
+                    <h3 className="font-sans font-bold text-base sm:text-lg text-[#0d0d0d] tracking-tight leading-snug truncate">
                       {item.label}
                     </h3>
-                    <p className="text-xs sm:text-sm text-[#4a4a4a] leading-relaxed line-clamp-2">
+                    <p className="text-xs text-[#55534e] leading-relaxed line-clamp-2">
                       {item.detail}
                     </p>
                   </div>
@@ -374,7 +373,7 @@ export function Achievements() {
           })}
 
           {/* End Card: "and counting →" */}
-          <div className="snap-center shrink-0 w-64 min-h-[580px] sm:min-h-[610px] rounded-[28px] border-2 border-dashed border-[rgba(13,13,13,0.18)] bg-white/40 flex flex-col items-center justify-center p-6 text-center text-[#77756f] select-none transition-all duration-500 opacity-60 hover:opacity-100">
+          <div className="snap-center shrink-0 w-56 min-h-[440px] sm:min-h-[460px] h-[460px] rounded-[24px] border-2 border-dashed border-[rgba(13,13,13,0.18)] bg-white/40 flex flex-col items-center justify-center p-5 text-center text-[#77756f] select-none transition-all duration-500 opacity-60 hover:opacity-100">
             <span className="font-mono text-[10px] uppercase tracking-widest block mb-2 text-[#a9a6a0]">
               Milestones
             </span>
