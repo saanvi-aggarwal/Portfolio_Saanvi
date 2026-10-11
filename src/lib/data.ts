@@ -698,10 +698,16 @@ export const ACHIEVEMENTS: AchievementItem[] = [
   {
     id: 'ach-6',
     index: '06 / 06',
+    metric: 'IEEE Council',
     label: 'HERizon 1.0 Hackathon',
     platform: 'Chandigarh University',
     logoKey: 'cu',
     brandColor: '#e11d48',
-    detail: 'Participated as part of a multidisciplinary team at Chandigarh University to develop a technology-driven solution.',
+    detail: 'Participated as part of team Quad X at Chandigarh University in collaboration with IEEE India Council to develop a technology-driven solution.',
+    images: ['/achievements/herizon-1.jpg'],
+    imageCaptions: [
+      'Certificate of Participation (HERizon 2026 · IEEE India Council)',
+    ],
+    imageType: 'certificate',
   },
 ];

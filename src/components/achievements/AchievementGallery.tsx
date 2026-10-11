@@ -132,7 +132,7 @@ export function AchievementGallery({
       </div>
 
       {/* 2. Thumbnail Row Below Hero (Rendered only if images.length > 1) */}
-      {hasMultiple && (
+      {hasMultiple ? (
         <div
           role="tablist"
           aria-label={`Thumbnail options for ${title}`}
@@ -177,6 +177,15 @@ export function AchievementGallery({
               </button>
             );
           })}
+        </div>
+      ) : (
+        <div className="flex items-center gap-2 mt-2 font-mono text-[10px] text-[#77756f]">
+          <span className="px-2.5 py-1 rounded-md bg-[#eae8e3]/70 border border-[rgba(13,13,13,0.08)]">
+            {isCertificate(0) ? 'Official Certificate' : 'Verified Photo'}
+          </span>
+          <span className="px-2.5 py-1 rounded-md bg-[#eae8e3]/70 border border-[rgba(13,13,13,0.08)]">
+            Click to Expand ⤢
+          </span>
         </div>
       )}
     </div>
