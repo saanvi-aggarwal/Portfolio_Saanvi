@@ -23,6 +23,11 @@ const NEXT_CONFIG: Record<
     href: '/coa/assignments',
   },
   assignments: {
+    nextTitle: 'Next: Case Study →',
+    nextDesc: 'Instruction cycle trace (ADD R3, R1, R2) with verified case study PDF.',
+    href: '/coa/case-study',
+  },
+  'case-study': {
     nextTitle: 'Next: Converter →',
     nextDesc: 'Convert between binary, octal, decimal and hex, with every step shown.',
     href: '/coa/converter',

@@ -26,6 +26,9 @@ export default async function CoaPage({
   if (params.tab === 'assignments') {
     redirect('/coa/assignments');
   }
+  if (params.tab === 'case-study') {
+    redirect('/coa/case-study');
+  }
 
   return (
     <div className="w-full pt-20 sm:pt-24 pb-12 sm:pb-16 min-h-[calc(100vh-80px)] flex flex-col justify-start">

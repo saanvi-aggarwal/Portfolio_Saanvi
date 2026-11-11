@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-export type CoaModuleId = 'converter' | 'simulator' | 'assignments';
+export type CoaModuleId = 'converter' | 'simulator' | 'assignments' | 'case-study';
 
 interface CoaSubNavProps {
   current: CoaModuleId;
@@ -13,6 +13,7 @@ const MODULES: { id: CoaModuleId; label: string; href: string }[] = [
   { id: 'converter', label: 'Converter', href: '/coa/converter' },
   { id: 'simulator', label: 'Simulator', href: '/coa/simulator' },
   { id: 'assignments', label: 'Assignments', href: '/coa/assignments' },
+  { id: 'case-study', label: 'Case Study', href: '/coa/case-study' },
 ];
 
 export function CoaSubNav({ current }: CoaSubNavProps) {

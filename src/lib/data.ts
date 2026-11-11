@@ -164,6 +164,56 @@ export interface AssignmentItem {
   topics?: string[];
 }
 
+export interface CaseStudyData {
+  id: string;
+  title: string;
+  course: string;
+  institution: string;
+  studentName: string;
+  uid: string;
+  classSection: string;
+  scenario: string;
+  problemStatement: string;
+  instruction: string;
+  given: {
+    r1Dec: number;
+    r1Bin: string;
+    r2Dec: number;
+    r2Bin: string;
+    r3Dec: number;
+    r3Bin: string;
+  };
+  pdfPath: string;
+  docxPath: string;
+  diagramPath: string;
+}
+
+export const COA_CASE_STUDY: CaseStudyData = {
+  id: 'coa-case-study',
+  title: 'CPU Instruction Cycle & Architecture Trace',
+  course: 'Computer Organisation and Architecture',
+  institution: 'University Institute of Engineering (UIE)',
+  studentName: 'Saanvi Aggarwal',
+  uid: '25BAI10045',
+  classSection: '25BAI-601',
+  scenario:
+    'A student runs a program that evaluates A = B + C, where B = 12 and C = 8. The CPU fetches, decodes, and executes the relevant machine instructions.',
+  problemStatement:
+    'Trace the operation of registers, ALU, control unit, and program counter during an addition instruction.',
+  instruction: 'ADD R3, R1, R2',
+  given: {
+    r1Dec: 12,
+    r1Bin: '0000 1100',
+    r2Dec: 8,
+    r2Bin: '0000 1000',
+    r3Dec: 20,
+    r3Bin: '0001 0100',
+  },
+  pdfPath: '/coa/case-study/case-study.pdf',
+  docxPath: '/coa/case-study/Case-Study.docx',
+  diagramPath: '/coa/case-study/image2.jpeg',
+};
+
 export const NAV: NavItem[] = [
   { id: 'home', label: 'Home', index: '00', href: '/' },
   { id: 'about', label: 'About', index: '01', href: '/about' },

@@ -18,6 +18,7 @@ export function CoaHubClient() {
     if (tab === 'converter') router.replace('/coa/converter');
     else if (tab === 'simulator') router.replace('/coa/simulator');
     else if (tab === 'assignments') router.replace('/coa/assignments');
+    else if (tab === 'case-study') router.replace('/coa/case-study');
   }, [searchParams, router]);
 
   // Converter looping preview
@@ -45,12 +46,12 @@ export function CoaHubClient() {
           <span className="font-serif italic font-normal text-[#0d0d0d]">ship it.</span>
         </h1>
         <p className="text-sm sm:text-base text-[#52504b] max-w-2xl">
-          Three core modules from my computer architecture coursework, built to be explored.
+          Four core modules from my computer architecture coursework, built to be explored.
         </p>
       </div>
 
-      {/* 3 Large Equal Cards in a Row (Stacked on Mobile) */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6 items-stretch">
+      {/* 4 Cards Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6 items-stretch">
         {/* Card 01: Number System Converter */}
         <Link
           href="/coa/converter"
@@ -250,6 +251,84 @@ export function CoaHubClient() {
           <div className="flex items-center justify-between pt-2 border-t border-[rgba(13,13,13,0.06)]">
             <span className="text-[11px] font-mono uppercase tracking-wider text-[#77756f]">
               Coursework PDF
+            </span>
+            <div
+              className="w-10 h-10 rounded-full border border-[rgba(13,13,13,0.15)] flex items-center justify-center font-mono text-sm text-[#0d0d0d] group-hover:bg-[#0d0d0d] group-hover:text-white group-hover:border-[#0d0d0d] transition-all duration-300"
+              aria-hidden="true"
+            >
+              →
+            </div>
+          </div>
+        </Link>
+
+        {/* Card 04: Case Study */}
+        <Link
+          href="/coa/case-study"
+          className="group flex flex-col justify-between p-6 sm:p-7 rounded-[28px] bg-white border border-[rgba(13,13,13,0.1)] shadow-2xs hover:shadow-md hover:-translate-y-1 transition-all duration-300 min-h-[380px] max-h-[440px]"
+        >
+          {/* Card Top: Index + Line Icon */}
+          <div className="space-y-4">
+            <div className="flex items-center justify-between">
+              <span className="font-mono text-xs text-[#77756f] font-semibold">04</span>
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="text-[#77756f] group-hover:text-[#0d0d0d] transition-colors"
+                aria-hidden="true"
+              >
+                <rect x="4" y="4" width="16" height="16" rx="2" />
+                <rect x="9" y="9" width="6" height="6" />
+                <line x1="9" y1="1" x2="9" y2="4" />
+                <line x1="15" y1="1" x2="15" y2="4" />
+                <line x1="9" y1="20" x2="9" y2="23" />
+                <line x1="15" y1="20" x2="15" y2="23" />
+                <line x1="20" y1="9" x2="23" y2="9" />
+                <line x1="20" y1="14" x2="23" y2="14" />
+                <line x1="1" y1="9" x2="4" y2="9" />
+                <line x1="1" y1="14" x2="4" y2="14" />
+              </svg>
+            </div>
+
+            {/* Title + One Plain-English Sentence */}
+            <div className="space-y-1.5">
+              <h2 className="heading-primary text-xl sm:text-2xl text-[#0d0d0d] group-hover:text-black transition-colors">
+                Case Study
+              </h2>
+              <p className="text-xs sm:text-sm text-[#77756f] leading-relaxed">
+                Instruction cycle trace for ADD R3, R1, R2, with the full case study in PDF.
+              </p>
+            </div>
+          </div>
+
+          {/* Tiny Live Preview: Instruction breakdown */}
+          <div className="my-auto py-3">
+            <div className="p-3 rounded-2xl bg-[#faf9f5] border border-[rgba(13,13,13,0.08)] font-mono text-xs flex flex-col gap-1.5 shadow-2xs">
+              <div className="flex items-center justify-between text-[11px] text-[#77756f]">
+                <span>ADD R3, R1, R2</span>
+                <span className="text-[#0d0d0d] font-semibold font-mono">20₁₀</span>
+              </div>
+              <div className="flex items-center gap-1 text-[10px] text-[#52504b]">
+                <span className="px-1.5 py-0.5 rounded bg-white border border-[rgba(13,13,13,0.08)] font-medium">Fetch</span>
+                <span>→</span>
+                <span className="px-1.5 py-0.5 rounded bg-white border border-[rgba(13,13,13,0.08)] font-medium">Decode</span>
+                <span>→</span>
+                <span className="px-1.5 py-0.5 rounded bg-white border border-[rgba(13,13,13,0.08)] font-medium">Exec</span>
+                <span>→</span>
+                <span className="px-1.5 py-0.5 rounded bg-white border border-[rgba(13,13,13,0.08)] font-medium">WB</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Card Bottom: Round arrow button */}
+          <div className="flex items-center justify-between pt-2 border-t border-[rgba(13,13,13,0.06)]">
+            <span className="text-[11px] font-mono uppercase tracking-wider text-[#77756f]">
+              Case Study PDF
             </span>
             <div
               className="w-10 h-10 rounded-full border border-[rgba(13,13,13,0.15)] flex items-center justify-center font-mono text-sm text-[#0d0d0d] group-hover:bg-[#0d0d0d] group-hover:text-white group-hover:border-[#0d0d0d] transition-all duration-300"
